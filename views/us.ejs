@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Note App</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container">
+        <form action="/urlShort" method="POST" class="url-form">
+            <input type="text" name="longUrl" placeholder="Enter your long URL" required class="input-field">
+            <button type="submit" class="submit-btn">Shorten it</button>
+        </form>
+
+        <% if (error) { %>
+            <p class="error-msg"><%= error %></p>
+        <% } %>
+
+        <div class="url-list">
+            <% Object.entries(urls).forEach(([shortUrl, longUrl]) => { %>
+                <div class="url-pair">
+                    <p><strong>Original URL:</strong> <a href="<%= longUrl %>" target="_blank"><%= longUrl %></a></p>
+                    <p><strong>Short URL:</strong> <a href="<%= shortUrl %>" target="_blank">http://<%=host%>:<%=PORT%>/<%= shortUrl %></a></p>
+                </div>
+            <% }) %>
+        </div>
+    </div>
+</body>
+</html>
