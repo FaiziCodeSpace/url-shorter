@@ -63,7 +63,7 @@ project-root/
 📦 Installation
 # Clone the repository
 ```
-git clone https://github.com/YourUsername/your-repo-name.git
+git clone https://github.com/FaiziCodeSpace/to-do-app-prototype.git
 ```
 # Navigate into the project
 ```
